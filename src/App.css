@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+
+.header-img {
+  position: absolute;
+  z-index: 1;
+  top: -100px;
+  border: solid;
+  border-color: white;
+}
+
+.title {
+  position: relative;
+  top: -100px;
+}
+
+.contacts {
+  text-align: left;
+  padding: 5%;
+}
+
+.bio {
+  text-align: right;
+}

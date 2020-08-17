@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static('build'));
+app.use(express.static('public'));
 
 // App Set //
 const PORT = process.env.PORT || 5000;

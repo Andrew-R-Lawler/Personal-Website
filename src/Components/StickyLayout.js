@@ -15,6 +15,7 @@ import {
   Embed,
 } from 'semantic-ui-react'
 import Headshot from '../Headshot.jpg'
+import Pretsl from '../Components/pretsl.jpg'
 
 const menuStyle = {
   border: 'none',
@@ -154,9 +155,21 @@ export default class StickyLayout extends Component {
                     <Header as='h3' sub>PanTree</Header>
                     <span>Recipe Search/Kitchen Inventory Management</span>
                     <p>PanTree streamlines the cooking experience in the kitchen by providing a central location to find and save recipes, populate shopping lists, and track kitchen inventory.</p>
+                    <p>GitHub Repository: <a href='https://github.com/Andrew-R-Lawler/PanTree'>https://github.com/Andrew-R-Lawler/PanTree</a></p>
                     <Embed
                         id='R1YRQa6cybU'
                         placeholder='../favicon.ico'
+                        source='youtube'
+                    />
+                    <Header as='h3' sub>Pretsl</Header>
+                    <span>On-Boarding Application</span>
+                    <p>Pretsl run’s a merchant center that serves smaller, less represented, food markets and caterers. However, Timi, the founder, approached us with an issue with the current onboarding process.
+                    With our onboarding application we were able to cut a number of steps from their current onboarding process. The app also acts as a  centralized location for communication between Pretsl’s sales force and customers using an integrated support and emailing system.
+                    For the front end of this project we used the React.js framework, our backend was run on an Node.js express server, and our database was hosted on an AWS RDS PostgreSQL server.</p>
+                    <p>GitHub Repository: <a href='https://github.com/Andrew-R-Lawler/pretsl-onboarding'>https://github.com/Andrew-R-Lawler/pretsl-onboarding</a></p>
+                    <Embed
+                        id='rMEMIeJHH74'
+                        placeholder={Pretsl}
                         source='youtube'
                     />
             </Container>

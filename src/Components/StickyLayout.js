@@ -3,10 +3,7 @@ import React, { Component } from 'react'
 import {
   Container,
   Divider,
-  Dropdown,
-  Grid,
   Header,
-  Icon,
   Image,
   List,
   Menu,
@@ -32,44 +29,12 @@ const fixedMenuStyle = {
   boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.2)',
 }
 
-const overlayStyle = {
-  float: 'left',
-  margin: '0em 3em 1em 0em',
-}
-
-const fixedOverlayStyle = {
-  ...overlayStyle,
-  position: 'fixed',
-  top: '80px',
-  zIndex: 10,
-}
-
-const overlayMenuStyle = {
-  position: 'relative',
-  left: 0,
-  transition: 'left 0.5s ease',
-}
-
-const fixedOverlayMenuStyle = {
-  ...overlayMenuStyle,
-  left: '800px',
-}
-
 const LeftImage = () => (
   <Image
     floated='left'
     size='small'
     src={Headshot}
     style={{ margin: '2em 2em 2em -4em' }}
-  />
-)
-
-const RightImage = () => (
-  <Image
-    floated='right'
-    size='medium'
-    src='/images/wireframe/square-image.png'
-    style={{ margin: '2em -4em 2em 2em' }}
   />
 )
 
@@ -102,7 +67,7 @@ export default class StickyLayout extends Component {
   switchToContact = () => this.setState({ blogView: false })
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state
+    const { menuFixed } = this.state
 
     return (
       <div>

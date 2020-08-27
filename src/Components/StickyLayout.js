@@ -12,6 +12,7 @@ import {
   Menu,
   Segment,
   Visibility,
+  Embed,
 } from 'semantic-ui-react'
 import Headshot from '../Headshot.jpg'
 
@@ -76,6 +77,7 @@ export default class StickyLayout extends Component {
   state = {
     menuFixed: false,
     overlayFixed: false,
+    blogView: false,
   }
 
   handleOverlayRef = (c) => {
@@ -93,6 +95,10 @@ export default class StickyLayout extends Component {
   unStickOverlay = () => this.setState({ overlayFixed: false })
 
   unStickTopMenu = () => this.setState({ menuFixed: false })
+
+  switchToBlog = () => this.setState({ blogView: true })
+  
+  switchToContact = () => this.setState({ blogView: false })
 
   render() {
     const { menuFixed, overlayFixed, overlayRect } = this.state
@@ -133,42 +139,61 @@ export default class StickyLayout extends Component {
           >
             <Container text>
               <Menu.Item header>Professional Portfolio</Menu.Item>
-              <Menu.Item as='a'>Project Blog</Menu.Item>
+                {this.state.blogView ? 
+                <Menu.Item as='a' onClick={this.switchToContact}>Contact Information</Menu.Item>
+                :
+                <Menu.Item as='a' onClick={this.switchToBlog}>Project Blog</Menu.Item>
+                }
             </Container>
           </Menu>
         </Visibility>
 
+        {this.state.blogView ?
+            <Container text>
+                <Header as='h2'>Project Blog</Header>
+                    <Header as='h3' sub>PanTree</Header>
+                    <span>Recipe Search/Kitchen Inventory Management</span>
+                    <p>PanTree streamlines the cooking experience in the kitchen by providing a central location to find and save recipes, populate shopping lists, and track kitchen inventory.</p>
+                    <Embed
+                        id='R1YRQa6cybU'
+                        placeholder='../favicon.ico'
+                        source='youtube'
+                    />
+            </Container>
+        :
         <Container text>
-          <Header as='h2'>Contact Information</Header>
-          <p>Email: Andrew.R.Lawler@gmail.com</p>
-          <p>Phone: 651-325-8111</p>
-          <p>LinkedIn: <a href='https://www.linkedin.com/in/andrew-lawler-blrd2272/'>https://www.linkedin.com/in/andrew-lawler-blrd2272/</a></p>
-          <p>Twitter: <a href='https://twitter.com/Andrew_R_Lawler'>@Andrew_R_Lawler</a></p>
-          <Header as='h2'>Personal Bio</Header>
-          <p>Andrew Lawler is a passionate lover of all technology on the bleeding edge. He love's to support interesting passion-projects from others in the tech field. Andrew builds and maintains his own computers and loves to help friends and family create machines that fit their personal needs.
-            Andrew has a penchant for creating positive experiences, that has been developed through years of fine dining experience. He is driven by the pursuit of making the world a better place for those around him.</p>
-          <Header as='h2'>Technical Skills</Header>
-          <List horizontal size='big'>
-            <List.Item>React</List.Item>
-            <List.Item>Redux</List.Item>
-            <List.Item>Redux-Sagas</List.Item>
-            <List.Item>JavaScript</List.Item>
-            <List.Item>Node.js</List.Item>
-            <List.Item>Express</List.Item>
-            <List.Item>PostgreSQL</List.Item>
-            <List.Item>SQL</List.Item>
-            <List.Item>EC2</List.Item>
-            <List.Item>RDS</List.Item>
-            <List.Item>EBS</List.Item>
-            <List.Item>CSS</List.Item>
-            <List.Item>HTML5</List.Item>
-            <List.Item>jQuery</List.Item>
-            <List.Item>Bootstrap</List.Item>
-            <List.Item>Semantic React</List.Item>
-            <List.Item>Python</List.Item>
-            <List.Item>AWS</List.Item>
-        </List>
+            <Header as='h2'>Contact Information</Header>
+                <p>Email: Andrew.R.Lawler@gmail.com</p>
+                <p>Phone: 651-325-8111</p>
+                <p>LinkedIn: <a href='https://www.linkedin.com/in/andrew-lawler-blrd2272/'>https://www.linkedin.com/in/andrew-lawler-blrd2272/</a></p>
+                <p>Twitter: <a href='https://twitter.com/Andrew_R_Lawler'>@Andrew_R_Lawler</a></p>
+            <Header as='h2'>Personal Bio</Header>
+                <p>Andrew Lawler is a passionate lover of all technology on the bleeding edge. He love's to support interesting passion-projects from others in the tech field. Andrew builds and maintains his own computers and loves to help friends and family create machines that fit their personal needs.
+                Andrew has a penchant for creating positive experiences, that has been developed through years of fine dining experience. He is driven by the pursuit of making the world a better place for those around him.</p>
+            <Header as='h2'>Technical Skills</Header>
+            <List horizontal size='big'>
+                <List.Item>React</List.Item>
+                <List.Item>Redux</List.Item>
+                <List.Item>Redux-Sagas</List.Item>
+                <List.Item>JavaScript</List.Item>
+                <List.Item>Node.js</List.Item>
+                <List.Item>Express</List.Item>
+                <List.Item>PostgreSQL</List.Item>
+                <List.Item>SQL</List.Item>
+                <List.Item>EC2</List.Item>
+                <List.Item>RDS</List.Item>
+                <List.Item>EBS</List.Item>
+                <List.Item>CSS</List.Item>
+                <List.Item>HTML5</List.Item>
+                <List.Item>jQuery</List.Item>
+                <List.Item>Bootstrap</List.Item>
+                <List.Item>Semantic React</List.Item>
+                <List.Item>Python</List.Item>
+                <List.Item>AWS</List.Item>
+            </List>
         </Container>
+        }
+        
 
         <Segment inverted style={{ margin: '5em 0em 0em', padding: '5em 0em' }} vertical>
           <Container textAlign='center'>
